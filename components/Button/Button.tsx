@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 interface Props {
   children: React.ReactNode;
-  gradient?: boolean;
 }
 
 const Button = styled.button`
@@ -13,7 +12,8 @@ const Button = styled.button`
   padding: 0.75rem 1.25rem;
   border-radius: 0.25rem;
   font-size: 1rem;
-  font-weight: bold;
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   @media (hover: hover) and (pointer: fine) {
