@@ -19,8 +19,8 @@ const Button = styled.button`
   @media (hover: hover) and (pointer: fine) {
     // conditionally add the hover styles only if the browser supports pointer events
     &:hover {
-      background-color: ${(props) => props.theme.colors.greenTint};
-      transform: scale(1.05) translateY(-2.5px);
+      /* background-color: ${(props) => props.theme.colors.greenTint}; */
+      transform: translateY(-5px);
       box-shadow: 11px 10px 26px 5px ${(props) => props.theme.colors.greenTint};
     }
     &:active {
@@ -28,13 +28,13 @@ const Button = styled.button`
     }
   }
   &:active {
-    transform: scale(1.025) translateY(-1.5px);
+    transform: translateY(0);
     background-color: ${(props) => props.theme.colors.greenTint};
   }
 `;
 
-function ButtonComp({ children, ...props }: Props) {
+function Button_({ children, ...props }: Props) {
   return <Button {...props}>{children}</Button>;
 }
 
-export default ButtonComp;
+export default Button_;

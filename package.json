@@ -13,6 +13,7 @@
     "pre-commit": "npm run lint"
   },
   "dependencies": {
+    "framer-motion": "^6.3.11",
     "next": "12.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
