@@ -7,7 +7,7 @@ import Technologies from "../components/Technologies";
 
 const Home: NextPage = () => (
   <>
-    <Navbar />
+    <Navbar isMobile />
     <About>Hello About</About>
     <Technologies>Hello Technologies</Technologies>
     <Projects>Hello Projects</Projects>

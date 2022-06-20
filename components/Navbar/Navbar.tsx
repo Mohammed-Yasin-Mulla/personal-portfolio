@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Common/Button";
 import NavbarLink from "./NavbarLink";
+import NavbarFloating from "./NavbarFloating";
 
 interface Props {
   isMobile?: boolean;
@@ -31,22 +32,6 @@ const LinkName = ["About", "Technologies", "Projects", "Contact"];
 const LinkGroup = LinkName.map((name, index) => {
   return <NavbarLink key={index} label={name} index={index} />;
 });
-
-const BottomNavbar = styled.div`
-  background-color: ${(props) => props.theme.colors.slate};
-  display: flex;
-  width: 150px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: 300;
-  color: ${(props) => props.theme.colors.white};
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-`;
 
 export default function Navbar_(props: Props) {
   const { isMobile = false } = props;
@@ -78,15 +63,7 @@ export default function Navbar_(props: Props) {
   if (isMobile) {
     return (
       <>
-        <Navbar>
-          <span>Logo</span>
-        </Navbar>
-        <BottomNavbar>
-          <section>1</section>
-          <section>2</section>
-          <section>3</section>
-          <section>4</section>
-        </BottomNavbar>
+        <NavbarFloating />
       </>
     );
   }
