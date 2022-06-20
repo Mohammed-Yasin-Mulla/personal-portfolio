@@ -1,6 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { FaBeer } from "react-icons/fa";
+import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+
+interface Props {
+  positionCol: "left" | "right";
+}
 
 interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   isMobile?: boolean;
@@ -29,37 +33,94 @@ const Wrapper = styled.div<WrapperProps>`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  /* transition: all 1s ease-in; */
+  gap: 1rem;
+  margin: 0 2rem;
   ${(props) => props.positionLeftCol && positionLeftCol}
   ${(props) => props.positionRightCol && positionRightCol}
-  svg {
-    margin-left: 0.5rem;
-    width: 20px;
-    height: 20px;
-    fill: ${(props) => props.theme.colors.white};
-    &:hover {
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-      fill: ${(props) => props.theme.colors.green};
-      transform: translateY(-5px);
-    }
-  }
 `;
 
 const VerticalLine = styled.div`
-  height: 150px;
-  border-left: 2px solid ${(props) => props.theme.colors.white};
+  height: 100px;
+  border-left: 2px solid ${(props) => props.theme.colors.slate};
   z-index: 1;
   display: inline-block;
   left: 25%;
 `;
 
-export default function NavbarSide({}) {
-  return (
-    <Wrapper positionLeftCol>
-      <FaBeer accentHeight="2px" className="svgIcons" />
+const Link = styled.a`
+  text-decoration: none;
+  padding: 10px;
+  p {
+    color: ${(props) => props.theme.colors.slate};
+    font-family: ${(props) => props.theme.fonts.secondary};
+    writing-mode: tb-rl;
+    transition: all 0.15s ease-in-out;
+  }
+  svg {
+    stroke: ${(props) => props.theme.colors.slate};
+    width: 25px;
+    height: 25px;
+    transition: all 0.15s ease-in-out;
+  }
 
-      <VerticalLine />
-    </Wrapper>
-  );
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        stroke: ${(props) => props.theme.colors.green};
+        transform: translateY(-5px);
+      }
+      p {
+        color: ${(props) => props.theme.colors.green};
+        transform: translateY(-5px);
+      }
+    }
+    &:active {
+      svg,
+      p {
+        transform: translateY(0);
+      }
+    }
+  }
+  &:active {
+    svg {
+      stroke: ${(props) => props.theme.colors.greenTint};
+    }
+    p {
+      color: ${(props) => props.theme.colors.greenTint};
+    }
+  }
+`;
+
+export default function NavbarSide(props: Props) {
+  const { positionCol } = props;
+
+  if (positionCol === "left") {
+    return (
+      <Wrapper positionLeftCol>
+        <Link>
+          <FiGithub className="svgIcon" />
+        </Link>
+        <Link>
+          <FiLinkedin className="svgIcon" />
+        </Link>
+        <Link>
+          <FiTwitter className="svgIcon" />
+        </Link>
+        <VerticalLine />
+      </Wrapper>
+    );
+  }
+
+  if (positionCol === "right") {
+    return (
+      <Wrapper positionRightCol>
+        <Link>
+          <p className="email">MohammedYasinMulla@outlook.com</p>
+        </Link>
+        <VerticalLine />
+      </Wrapper>
+    );
+  }
+
+  return null;
 }

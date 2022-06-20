@@ -16,11 +16,11 @@ const Link = styled.a`
   transition: all 0.2s ease-in-out;
   padding: 0.5rem;
   border: 2px solid ${(props) => props.theme.colors.navy};
+  border-radius: 5px;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       border: 2px solid ${(props) => props.theme.colors.greenTint};
       color: ${(props) => props.theme.colors.green};
-      border-radius: 5px;
       transform: translateY(-5px);
     }
     &:active {
@@ -34,7 +34,7 @@ const Link = styled.a`
 
 const NumberWrapper = styled.section`
   display: inline-block;
-  font-family: "Fira Code", monospace;
+  font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 500;
   color: ${(props) => props.theme.colors.green};
 
@@ -45,7 +45,7 @@ const NumberWrapper = styled.section`
 
 const TextWrapper = styled.section`
   display: inline-block;
-  font-family: "Inter", sans-serif;
+  font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;
   color: ${(props) => props.theme.colors.white};
   ${Link}:hover & {

@@ -10,7 +10,7 @@ const Navbar = styled.nav`
   align-items: center;
   color: ${(props) => props.theme.colors.white};
   font-size: 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;
   border-bottom: 1px solid ${(props) => props.theme.colors.greenTint};
 `;
@@ -35,7 +35,9 @@ export default function Navbar_() {
         </Wrapper>
       </Navbar>
       {/* Left Icons */}
-      <NavbarSide />
+      <NavbarSide positionCol="right" />
+      {/* Right Email */}
+      <NavbarSide positionCol="left" />
     </>
   );
 }

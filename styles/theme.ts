@@ -1,7 +1,8 @@
 export const theme = {
-  // font:{
-
-  // },
+  fonts: {
+    primary: '"Inter", sans-serif',
+    secondary: '"Fira Code", monospace;',
+  },
 
   colors: {
     navy: "#0a192f",

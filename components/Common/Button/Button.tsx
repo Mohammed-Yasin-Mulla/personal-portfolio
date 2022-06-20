@@ -12,7 +12,7 @@ const Button = styled.button`
   padding: 0.75rem 1.25rem;
   border-radius: 0.25rem;
   font-size: 1rem;
-  font-family: "Fira Code", monospace;
+  font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 500;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
