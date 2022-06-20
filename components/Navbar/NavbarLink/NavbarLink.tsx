@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
@@ -9,7 +10,7 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   onClick?: () => void;
 }
 
-const Link = styled.a`
+const Link = styled(motion.a)`
   color: ${(props) => props.theme.colors.white};
   margin-right: 1.5rem;
   text-decoration: none;
@@ -53,22 +54,25 @@ const TextWrapper = styled.section`
   }
 `;
 
-export default function NavbarLink({
-  index,
-  label,
-  link,
-  target,
-  ...props
-}: Props) {
+export default function NavbarLink(props: Props) {
+  const { index, label, link, target } = props;
+
   const formattedNumber = (index + 1).toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
   return (
-    <Link href={link} target={target} {...props}>
-      <NumberWrapper>{formattedNumber}.</NumberWrapper>
-      <TextWrapper>{label}</TextWrapper>
-    </Link>
+    <motion.div
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ opacity: 0, y: -30 }}
+      transition={{ ease: "backIn", duration: 1, delay: 0.3 * index }}
+      style={{ display: "flex", alignItems: "center" }}
+    >
+      <Link href={link} target={target}>
+        <NumberWrapper>{formattedNumber}.</NumberWrapper>
+        <TextWrapper>{label}</TextWrapper>
+      </Link>
+    </motion.div>
   );
 }

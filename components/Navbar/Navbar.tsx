@@ -6,6 +6,7 @@ import NavbarLink from "./NavbarLink";
 
 const Navbar = styled.nav`
   display: flex;
+  padding: 1rem 2rem;
   justify-content: space-between;
   align-items: center;
   color: ${(props) => props.theme.colors.white};
@@ -27,6 +28,7 @@ const LinkGroup = LinkName.map((name, index) => {
 export default function Navbar_() {
   return (
     <>
+      {/* Top NavBar */}
       <Navbar>
         <span>Logo</span>
         <Wrapper>
@@ -34,8 +36,10 @@ export default function Navbar_() {
           <Button>Resume</Button>
         </Wrapper>
       </Navbar>
+
       {/* Left Icons */}
       <NavbarSide positionCol="right" />
+
       {/* Right Email */}
       <NavbarSide positionCol="left" />
     </>
