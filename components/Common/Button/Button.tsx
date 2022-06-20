@@ -1,32 +1,21 @@
+import { HTMLMotionProps, motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
-interface Props {
+interface Props extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
 }
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   background-color: transparent;
   color: ${(props) => props.theme.colors.green};
   border: 2px solid ${(props) => props.theme.colors.green};
   padding: 0.75rem 1.25rem;
   border-radius: 0.25rem;
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  @media (hover: hover) and (pointer: fine) {
-    // conditionally add the hover styles only if the browser supports pointer events
-    &:hover {
-      /* background-color: ${(props) => props.theme.colors.greenTint}; */
-      transform: translateY(-5px);
-      box-shadow: 11px 10px 26px 5px ${(props) => props.theme.colors.greenTint};
-    }
-    &:active {
-      box-shadow: 11px 6px 5px 1px ${(props) => props.theme.colors.greenTint};
-    }
-  }
   &:active {
     transform: translateY(0);
     background-color: ${(props) => props.theme.colors.greenTint};
@@ -34,7 +23,11 @@ const Button = styled.button`
 `;
 
 function Button_({ children, ...props }: Props) {
-  return <Button {...props}>{children}</Button>;
+  return (
+    <Button whileHover={{ y: -5 }} whileTap={{ scale: 0.95, y: 0 }} {...props}>
+      {children}
+    </Button>
+  );
 }
 
 export default Button_;

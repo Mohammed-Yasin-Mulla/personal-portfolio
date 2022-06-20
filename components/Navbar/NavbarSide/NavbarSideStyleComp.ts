@@ -8,7 +8,7 @@ interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   positionRightCol?: boolean;
 }
 const positionLeftCol = css`
-  position: absolute;
+  position: fixed;
   justify-content: center;
   flex-direction: column;
   left: 0;
@@ -16,7 +16,7 @@ const positionLeftCol = css`
   z-index: 1;
 `;
 const positionRightCol = css`
-  position: absolute;
+  position: fixed;
   flex-direction: column;
   right: 0;
   bottom: 0;
@@ -31,6 +31,10 @@ export const Wrapper = styled.div<WrapperProps>`
   margin: 0 2rem;
   ${(props) => props.positionLeftCol && positionLeftCol}
   ${(props) => props.positionRightCol && positionRightCol}
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export const VerticalLine = styled(motion.div)`
   height: 100px;
@@ -41,6 +45,7 @@ export const VerticalLine = styled(motion.div)`
 `;
 export const Link = styled(motion.a)`
   text-decoration: none;
+  font-size: 0.8125rem;
   padding: 10px;
   p {
     color: ${(props) => props.theme.colors.slate};
@@ -50,8 +55,8 @@ export const Link = styled(motion.a)`
   }
   svg {
     stroke: ${(props) => props.theme.colors.slate};
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     transition: all 0.15s ease-in-out;
   }
 

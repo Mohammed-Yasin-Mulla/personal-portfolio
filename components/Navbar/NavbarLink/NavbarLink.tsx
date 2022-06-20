@@ -37,6 +37,7 @@ const NumberWrapper = styled.section`
   display: inline-block;
   font-family: ${(props) => props.theme.fonts.secondary};
   font-weight: 500;
+  font-size: 0.8125rem;
   color: ${(props) => props.theme.colors.green};
 
   ${Link}:hover & {
@@ -46,6 +47,7 @@ const NumberWrapper = styled.section`
 
 const TextWrapper = styled.section`
   display: inline-block;
+  font-size: 0.8125rem;
   font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;
   color: ${(props) => props.theme.colors.white};
