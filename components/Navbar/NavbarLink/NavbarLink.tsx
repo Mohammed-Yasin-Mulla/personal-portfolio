@@ -45,7 +45,6 @@ const NumberWrapper = styled.section`
 
 const TextWrapper = styled.section`
   display: inline-block;
-  margin-left: 0.25rem;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   color: ${(props) => props.theme.colors.white};
@@ -59,7 +58,6 @@ export default function NavbarLink({
   label,
   link,
   target,
-  onClick,
   ...props
 }: Props) {
   const formattedNumber = (index + 1).toLocaleString("en-US", {
@@ -68,7 +66,7 @@ export default function NavbarLink({
   });
 
   return (
-    <Link href={link} target={target} onClick={onClick} {...props}>
+    <Link href={link} target={target} {...props}>
       <NumberWrapper>{formattedNumber}.</NumberWrapper>
       <TextWrapper>{label}</TextWrapper>
     </Link>
