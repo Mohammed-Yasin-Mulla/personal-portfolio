@@ -2,6 +2,7 @@ import React from "react";
 
 interface Props {
   children: React.ReactNode;
+  isMobile?: boolean;
 }
 
 export default function Technologies(props: Props) {

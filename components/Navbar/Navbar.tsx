@@ -11,6 +11,9 @@ interface Props {
 
 const Navbar = styled.nav`
   display: flex;
+  z-index: 2;
+  position: fixed;
+  width: 100vw;
   padding: 1rem 2rem;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +22,7 @@ const Navbar = styled.nav`
   font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;
   border-bottom: 1px solid ${(props) => props.theme.colors.greenTint};
+  backdrop-filter: blur(15px);
 `;
 
 const Wrapper = styled.div`

@@ -8,34 +8,72 @@ interface Props {
 export default function NavbarSide(props: Props) {
   const { positionCol } = props;
 
+  const variants = {
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+        when: "afterChildren",
+        delay: i * 0.3,
+      },
+    }),
+    hidden: {
+      opacity: 0,
+      x: -20,
+      transition: {
+        ease: "easeInOut",
+        when: "afterChildren",
+      },
+    },
+    whileHover: {
+      y: -5,
+    },
+    whileTap: {
+      y: 0,
+    },
+  };
+
   if (positionCol === "left") {
     return (
       <Wrapper positionLeftCol>
         <Link
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ ease: "easeInOut", duration: 1 }}
+          variants={variants}
+          animate="visible"
+          initial="hidden"
+          whileHover="whileHover"
+          whileTap="whileTap"
+          custom={1}
         >
           <FiGithub className="svgIcon" />
         </Link>
         <Link
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ ease: "easeInOut", duration: 1, delay: 0.3 }}
+          variants={variants}
+          animate="visible"
+          initial="hidden"
+          whileHover="whileHover"
+          whileTap="whileTap"
+          custom={2}
         >
           <FiLinkedin className="svgIcon" />
         </Link>
         <Link
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ ease: "easeInOut", duration: 1, delay: 0.6 }}
+          variants={variants}
+          animate="visible"
+          initial="hidden"
+          whileHover="whileHover"
+          whileTap="whileTap"
+          custom={3}
         >
           <FiTwitter className="svgIcon" />
         </Link>
         <VerticalLine
           animate={{ y: 0, opacity: 1 }}
           initial={{ opacity: 0, y: 100 }}
-          transition={{ ease: "easeInOut", duration: 1, delay: 0.9 }}
+          transition={{ ease: "easeInOut", when: "afterChildren" }}
+          // whileHover={{ y: -5 }}
+          // whileTap={{ y: 0 }}
         />
       </Wrapper>
     );
@@ -45,16 +83,19 @@ export default function NavbarSide(props: Props) {
     return (
       <Wrapper positionRightCol>
         <Link
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ ease: "easeInOut", duration: 1, delay: 0.6 }}
+          variants={variants}
+          animate="visible"
+          initial="hidden"
+          whileHover="whileHover"
+          whileTap="whileTap"
+          custom={1}
         >
           <p className="email">MohammedYasinMulla@outlook.com</p>
         </Link>
         <VerticalLine
           animate={{ y: 0, opacity: 1 }}
           initial={{ opacity: 0, y: 100 }}
-          transition={{ ease: "easeInOut", duration: 1, delay: 0.9 }}
+          transition={{ ease: "easeInOut", delay: 0.9 }}
         />
       </Wrapper>
     );

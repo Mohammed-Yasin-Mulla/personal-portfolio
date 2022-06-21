@@ -22,7 +22,7 @@ const positionRightCol = css`
   bottom: 0;
   z-index: 1;
 `;
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled(motion.div)<WrapperProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,24 +51,22 @@ export const Link = styled(motion.a)`
     color: ${(props) => props.theme.colors.slate};
     font-family: ${(props) => props.theme.fonts.secondary};
     writing-mode: tb-rl;
-    transition: all 0.15s ease-in-out;
   }
   svg {
     stroke: ${(props) => props.theme.colors.slate};
     width: 20px;
     height: 20px;
-    transition: all 0.15s ease-in-out;
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       svg {
         stroke: ${(props) => props.theme.colors.green};
-        transform: translateY(-5px);
+        /* transform: translateY(-5px); */
       }
       p {
         color: ${(props) => props.theme.colors.green};
-        transform: translateY(-5px);
+        /* transform: translateY(-5px); */
       }
     }
     &:active {

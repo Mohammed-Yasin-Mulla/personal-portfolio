@@ -5,13 +5,13 @@ import Navbar from "../components/Navbar/Navbar";
 import Projects from "../components/Projects";
 import Technologies from "../components/Technologies";
 
-const Home: NextPage = () => (
+const Home: NextPage = ({ isMobile }: { isMobile?: boolean }) => (
   <>
-    <Navbar isMobile />
-    <About>Hello About</About>
-    <Technologies>Hello Technologies</Technologies>
-    <Projects>Hello Projects</Projects>
-    <Contact>Hello Contact</Contact>
+    <Navbar isMobile={isMobile} />
+    <About isMobile={isMobile} />
+    <Technologies isMobile={isMobile}>Hello Technologies</Technologies>
+    <Projects isMobile={isMobile}>Hello Projects</Projects>
+    <Contact isMobile={isMobile}>Hello Contact</Contact>
   </>
 );
 

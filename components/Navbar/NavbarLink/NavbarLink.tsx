@@ -16,7 +16,7 @@ const Link = styled(motion.a)`
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   padding: 0.5rem;
-  border: 2px solid ${(props) => props.theme.colors.navy};
+  border: 2px solid ${(props) => props.theme.colors.lightNavy};
   border-radius: 5px;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -67,8 +67,8 @@ export default function NavbarLink(props: Props) {
   return (
     <motion.div
       animate={{ y: 0, opacity: 1 }}
-      initial={{ opacity: 0, y: -30 }}
-      transition={{ ease: "backIn", duration: 1, delay: 0.3 * index }}
+      initial={{ opacity: 0, y: -5 }}
+      transition={{ ease: "backIn", delay: 0.3 * index }}
       style={{ display: "flex", alignItems: "center" }}
     >
       <Link href={link} target={target}>
