@@ -6,6 +6,7 @@ export default {
   component: About,
 } as ComponentMeta<typeof About>;
 
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof About> = (args) => <About {...args} />;
 
 export const Default = Template.bind({});

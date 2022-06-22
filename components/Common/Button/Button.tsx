@@ -1,12 +1,21 @@
 import { HTMLMotionProps, motion } from "framer-motion";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface Props extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
+  mx?: number; // margin-left and margin-right
+  my?: number; // margin-top and margin-bottom
 }
 
-const Button = styled(motion.button)`
+const mx = css<Props>`
+  margin: 0 ${(props) => props.mx}rem;
+`;
+const my = css<Props>`
+  margin: ${(props) => props.my}rem 0;
+`;
+
+const Button = styled(motion.button)<Props>`
   background-color: transparent;
   color: ${(props) => props.theme.colors.green};
   border: 2px solid ${(props) => props.theme.colors.green};
@@ -20,6 +29,8 @@ const Button = styled(motion.button)`
     transform: translateY(0);
     background-color: ${(props) => props.theme.colors.greenTint};
   }
+  ${(props) => props.mx && mx}
+  ${(props) => props.my && my}
 `;
 
 function Button_({ children, ...props }: Props) {
