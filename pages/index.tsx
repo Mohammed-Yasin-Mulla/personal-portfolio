@@ -6,7 +6,7 @@ import Projects from "../components/Projects";
 import Technologies from "../components/Technologies";
 import About from "../components/About";
 
-const Home: NextPage = ({ isMobile = true }: { isMobile?: boolean }) => (
+const Home: NextPage = ({ isMobile = false }: { isMobile?: boolean }) => (
   <>
     <Navbar isMobile={isMobile} />
     <Hero isMobile={isMobile} />

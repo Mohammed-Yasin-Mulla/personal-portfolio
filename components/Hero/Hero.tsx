@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   width: 100vw;
   padding: 0 150px;
-  @media screen {
+  @media screen and (max-width: 768px) {
     padding: 0 25px;
     justify-content: flex-start;
     margin-top: 2rem;
