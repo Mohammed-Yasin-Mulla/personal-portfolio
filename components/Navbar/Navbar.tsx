@@ -13,6 +13,8 @@ const Navbar = styled.nav`
   display: flex;
   z-index: 2;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   padding: 1rem 2rem;
   justify-content: space-between;
