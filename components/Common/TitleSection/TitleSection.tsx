@@ -16,17 +16,17 @@ const Wrapper = styled(motion.div)`
   gap: 0.5rem;
   margin-bottom: 2.5rem;
 `;
-const NumberWrapper = styled.section`
-  display: inline-block;
+const NumberWrapper = styled(motion.section)`
+  /* display: inline-block; */
   font-family: ${(props) => props.theme.fonts.secondary};
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1.5rem;
   color: ${(props) => props.theme.colors.green};
 `;
 
-const TextWrapper = styled.section`
-  display: inline-block;
-  font-size: 2rem;
+const TextWrapper = styled(motion.section)`
+  /* display: inline-block; */
+  font-size: 1.75rem;
   font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;
   color: ${(props) => props.theme.colors.white};
@@ -45,11 +45,42 @@ export default function TitleSection(props: Props) {
   const { isMobile = false, number, title } = props;
   console.log("💡 ~ TitleSection ~ isMobile", isMobile);
 
+  const variant = {
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { duration: i * 0.4 },
+    }),
+    hidden: { opacity: 0, x: -60 },
+  };
+
   return (
     <Wrapper>
-      <NumberWrapper>{number}.</NumberWrapper>
-      <TextWrapper>{title}</TextWrapper>
-      <HorizontalLine />
+      <NumberWrapper
+        variants={variant}
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ once: true }}
+        custom={3}
+      >
+        {number}.
+      </NumberWrapper>
+      <TextWrapper
+        variants={variant}
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ once: true }}
+        custom={2}
+      >
+        {title}
+      </TextWrapper>
+      <HorizontalLine
+        variants={variant}
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ once: true }}
+        custom={1}
+      />
     </Wrapper>
   );
 }
