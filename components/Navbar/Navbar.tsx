@@ -48,7 +48,7 @@ export default function Navbar_(props: Props) {
           <Wrapper>
             {LinkGroup}
             <Button
-              animate={{ x: [30, 0], opacity: 1 }}
+              animate={{ x: [120, 0], opacity: 1 }}
               initial={{ opacity: 0 }}
             >
               Resume
