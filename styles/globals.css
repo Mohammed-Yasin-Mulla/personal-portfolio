@@ -1,11 +1,17 @@
 body {
-  padding: 0 100px;
   margin: 0;
   font-family: Inter, Fira Code, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   background-color: #0a192f;
   height: 100vh;
+  padding: 0 100px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 25px;
+  }
 }
 
 a {
