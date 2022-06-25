@@ -8,25 +8,27 @@ interface Props {
 export default function NavbarSide(props: Props) {
   const { positionCol } = props;
 
-  const variants = {
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
+  const variantsLeft = {
+    visible: ({ i }: { i: number }) => {
+      return {
+        opacity: 1,
+        x: 0,
+        transition: {
+          duration: 0.5,
+          ease: "easeInOut",
+          when: "afterChildren",
+          delay: i * 0.3,
+        },
+      };
+    },
+    hidden: ({ side = "left" }: { side: "left" | "right" }) => ({
+      opacity: 0,
+      x: side === "left" ? -20 : 20,
       transition: {
-        duration: 0.5,
         ease: "easeInOut",
         when: "afterChildren",
-        delay: i * 0.3,
       },
     }),
-    hidden: {
-      opacity: 0,
-      x: -20,
-      transition: {
-        ease: "easeInOut",
-        when: "afterChildren",
-      },
-    },
     whileHover: {
       y: -5,
     },
@@ -39,32 +41,32 @@ export default function NavbarSide(props: Props) {
     return (
       <Wrapper positionLeftCol>
         <Link
-          variants={variants}
+          variants={variantsLeft}
           animate="visible"
           initial="hidden"
           whileHover="whileHover"
           whileTap="whileTap"
-          custom={1}
+          custom={{ i: 1 }}
         >
           <FiGithub className="svgIcon" />
         </Link>
         <Link
-          variants={variants}
+          variants={variantsLeft}
           animate="visible"
           initial="hidden"
           whileHover="whileHover"
           whileTap="whileTap"
-          custom={2}
+          custom={{ i: 2 }}
         >
           <FiLinkedin className="svgIcon" />
         </Link>
         <Link
-          variants={variants}
+          variants={variantsLeft}
           animate="visible"
           initial="hidden"
           whileHover="whileHover"
           whileTap="whileTap"
-          custom={3}
+          custom={{ i: 3 }}
         >
           <FiTwitter className="svgIcon" />
         </Link>
@@ -72,8 +74,6 @@ export default function NavbarSide(props: Props) {
           animate={{ y: 0, opacity: 1 }}
           initial={{ opacity: 0, y: 100 }}
           transition={{ ease: "easeInOut", when: "afterChildren" }}
-          // whileHover={{ y: -5 }}
-          // whileTap={{ y: 0 }}
         />
       </Wrapper>
     );
@@ -83,12 +83,12 @@ export default function NavbarSide(props: Props) {
     return (
       <Wrapper positionRightCol>
         <Link
-          variants={variants}
+          variants={variantsLeft}
           animate="visible"
           initial="hidden"
           whileHover="whileHover"
           whileTap="whileTap"
-          custom={1}
+          custom={{ side: "right" }}
         >
           <p className="email">MohammedYasinMulla@outlook.com</p>
         </Link>
