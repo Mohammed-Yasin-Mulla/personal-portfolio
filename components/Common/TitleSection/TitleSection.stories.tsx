@@ -13,4 +13,6 @@ const Template: ComponentStory<typeof TitleSection> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   isMobile: false,
+  number: "01",
+  title: "Hello World",
 };
