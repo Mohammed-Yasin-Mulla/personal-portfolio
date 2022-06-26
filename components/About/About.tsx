@@ -11,6 +11,8 @@ const Wrapper = styled.div`
   justify-content: center;
   max-width: 1080px;
   margin-top: 2rem;
+  margin-bottom: 5rem;
+
   @media screen and (max-width: 768px) {
     justify-content: flex-start;
   }

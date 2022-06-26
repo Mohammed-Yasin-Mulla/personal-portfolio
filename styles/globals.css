@@ -15,12 +15,14 @@ p {
   body {
     display: flex;
     justify-content: center;
+    height: 100vh;
   }
 }
 
 @media screen and (max-width: 768px) {
   body {
     padding: 0 25px;
+    width: 100%;
   }
 }
 

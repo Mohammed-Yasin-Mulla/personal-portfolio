@@ -11,7 +11,7 @@ const Home: NextPage = ({ isMobile = false }: { isMobile?: boolean }) => (
     <Navbar isMobile={isMobile} />
     <Hero isMobile={isMobile} />
     <About />
-    <Technologies isMobile={isMobile}>Hello Technologies</Technologies>
+    <Technologies />
     <Projects isMobile={isMobile}>Hello Projects</Projects>
     <Contact isMobile={isMobile}>Hello Contact</Contact>
   </>

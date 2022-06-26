@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
     justify-content: flex-start;
     margin-top: 2rem;
+    height: 120vh;
   }
 `;
 
