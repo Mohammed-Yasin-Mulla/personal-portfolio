@@ -6,7 +6,16 @@ body {
   background-color: #0a192f;
   height: 100vh;
   padding: 0 100px;
+}
+p {
   line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
