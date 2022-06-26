@@ -30,7 +30,7 @@ const AboutText = styled(motion.p)`
   color: ${(props) => props.theme.colors.slate};
   margin: 0;
 `;
-const AboutImage = styled.div`
+const AboutImage = styled(motion.div)`
   background-color: ${(props) => props.theme.colors.lightNavy};
   border-radius: 1rem;
   width: 22rem;
@@ -39,11 +39,47 @@ const AboutImage = styled.div`
 `;
 
 export default function About() {
+  const variants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.5,
+        delay: 0.6,
+      },
+    },
+    hidden: (side = "left") => ({
+      opacity: 0,
+      x: side === "left" ? -60 : 60,
+    }),
+    onHover: {
+      scale: 1.1,
+      rotate: "-0.02turn",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+    onHoverOut: {
+      scale: 1,
+      rotate: "0turn",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <Wrapper>
       <TitleSection number="01" title="About" />
       <AboutSection>
-        <AboutText>
+        <AboutText variants={variants} whileInView="visible" initial="hidden">
           {` My passion for computers began at the age of 8 with a Windows XP
           system that introduced me to the world of flash games like Miniclip. 4
           years and a burned up power supply later, I knew computers and
@@ -53,7 +89,14 @@ export default function About() {
           Fusion360. Today, I’m a well equipped front end developer who is
           constantly evolving towards being a full stack developer.`}
         </AboutText>
-        <AboutImage>
+        <AboutImage
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          custom={"right"}
+          whileHover="onHover"
+          whileTap={"onHoverOut"}
+        >
           <Image src={ProfilePic} alt="My profile-pic" layout="responsive" />
         </AboutImage>
       </AboutSection>
