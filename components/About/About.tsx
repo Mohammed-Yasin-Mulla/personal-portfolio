@@ -79,7 +79,12 @@ export default function About() {
     <Wrapper>
       <TitleSection number="01" title="About" />
       <AboutSection>
-        <AboutText variants={variants} whileInView="visible" initial="hidden">
+        <AboutText
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          viewport={{ once: true }}
+        >
           {` My passion for computers began at the age of 8 with a Windows XP
           system that introduced me to the world of flash games like Miniclip. 4
           years and a burned up power supply later, I knew computers and
@@ -96,6 +101,7 @@ export default function About() {
           custom={"right"}
           whileHover="onHover"
           whileTap={"onHoverOut"}
+          viewport={{ once: true }}
         >
           <Image src={ProfilePic} alt="My profile-pic" layout="responsive" />
         </AboutImage>
