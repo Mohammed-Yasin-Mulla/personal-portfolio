@@ -47,6 +47,7 @@ export const Link = styled(motion.a)`
   text-decoration: none;
   font-size: 0.8125rem;
   padding: 10px;
+  cursor: pointer;
   p {
     color: ${(props) => props.theme.colors.slate};
     font-family: ${(props) => props.theme.fonts.secondary};

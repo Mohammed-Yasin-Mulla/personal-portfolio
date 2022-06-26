@@ -18,6 +18,7 @@ const Link = styled(motion.a)`
   padding: 0.5rem;
   border: 2px solid ${(props) => props.theme.colors.lightNavy};
   border-radius: 5px;
+  cursor: pointer;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       border: 2px solid ${(props) => props.theme.colors.greenTint};

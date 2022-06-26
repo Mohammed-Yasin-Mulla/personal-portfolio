@@ -27,6 +27,7 @@ const NavbarFloating = styled(motion.nav)`
   a {
     background: transparent;
     padding: 0.55rem;
+    cursor: pointer;
     &:active {
       color: ${(props) => props.theme.colors.green};
     }
