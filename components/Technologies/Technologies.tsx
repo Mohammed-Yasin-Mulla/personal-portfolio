@@ -64,25 +64,22 @@ const LogoList = styled.div`
   margin: 2rem auto;
 
   @media screen and (max-width: 768px) {
-    /* flex-direction: column; */
-    /* width: 95%; */
-    /* align-items: flex-start; */
-    /* justify-content: flex-start; */
+    margin: 1rem 0 0.5rem 0;
   }
 `;
 
 const LogoWrapper = styled(motion.div)`
   display: flex;
-  background-color: ${(props) => props.theme.colors.lightestNavy};
   justify-content: center;
   align-items: center;
   width: 120px;
-  padding: 10px;
+  padding: 5px;
   height: 120px;
   border-radius: 10%;
   @media screen and (max-width: 768px) {
     width: 60px;
     height: 60px;
+    padding: 0;
   }
 `;
 
@@ -123,6 +120,20 @@ export default function Technologies() {
     },
   };
 
+  const Text = styled(motion.p)`
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    font-family: ${(props) => props.theme.fonts.secondary};
+    font-weight: 500;
+    color: ${(props) => props.theme.colors.green};
+    margin: 0;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  `;
+
   return (
     <Wrapper>
       <TitleSection number="02" title="Technologies"></TitleSection>
@@ -151,6 +162,15 @@ export default function Technologies() {
           </LogoWrapper>
         ))}
       </LogoList>
+      <Text
+        variants={variants}
+        whileInView="visible"
+        initial="hidden"
+        custom={17}
+        viewport={{ once: true }}
+      >
+        and more ...
+      </Text>
     </Wrapper>
   );
 }
