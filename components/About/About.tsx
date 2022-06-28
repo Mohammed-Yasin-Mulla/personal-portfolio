@@ -37,7 +37,7 @@ const AboutText = styled(motion.p)`
   color: ${(props) => props.theme.colors.slate};
   margin: 0;
   @media screen and (max-width: 768px) {
-    text-align: justify;
+    text-align: center;
   }
 `;
 const AboutImage = styled(motion.div)`

@@ -39,7 +39,7 @@ export default function NavbarSide(props: Props) {
 
   if (positionCol === "left") {
     return (
-      <Wrapper positionLeftCol>
+      <Wrapper positionleftcol>
         <Link
           variants={variantsLeft}
           animate="visible"
@@ -81,7 +81,7 @@ export default function NavbarSide(props: Props) {
 
   if (positionCol === "right") {
     return (
-      <Wrapper positionRightCol>
+      <Wrapper positionrightcol>
         <Link
           variants={variantsLeft}
           animate="visible"

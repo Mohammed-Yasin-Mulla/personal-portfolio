@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import About from "./index";
 
 export default {
-  title: "About",
+  title: "Hero",
   component: About,
 } as ComponentMeta<typeof About>;
 

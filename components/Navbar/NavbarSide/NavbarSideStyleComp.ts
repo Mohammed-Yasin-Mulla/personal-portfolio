@@ -4,10 +4,10 @@ import styled, { css } from "styled-components";
 
 interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   isMobile?: boolean;
-  positionLeftCol?: boolean;
-  positionRightCol?: boolean;
+  positionleftcol?: boolean;
+  positionrightcol?: boolean;
 }
-const positionLeftCol = css`
+const positionleftcol = css`
   position: fixed;
   justify-content: center;
   flex-direction: column;
@@ -15,7 +15,7 @@ const positionLeftCol = css`
   bottom: 0;
   z-index: 1;
 `;
-const positionRightCol = css`
+const positionrightcol = css`
   position: fixed;
   flex-direction: column;
   right: 0;
@@ -29,8 +29,8 @@ export const Wrapper = styled(motion.div)<WrapperProps>`
   flex-direction: column;
   gap: 1rem;
   margin: 0 2rem;
-  ${(props) => props.positionLeftCol && positionLeftCol}
-  ${(props) => props.positionRightCol && positionRightCol}
+  ${(props) => props.positionleftcol && positionleftcol}
+  ${(props) => props.positionrightcol && positionrightcol}
 
   @media screen and (max-width: 768px) {
     display: none;
