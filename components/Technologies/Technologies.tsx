@@ -60,13 +60,14 @@ const LogoList = styled.div`
   flex-wrap: wrap;
   gap: 13px;
   align-items: center;
-  width: 80%;
+
   margin: 2rem auto;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    /* flex-direction: column; */
+    /* width: 95%; */
+    /* align-items: flex-start; */
+    /* justify-content: flex-start; */
   }
 `;
 
@@ -79,6 +80,10 @@ const LogoWrapper = styled(motion.div)`
   padding: 10px;
   height: 120px;
   border-radius: 10%;
+  @media screen and (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export default function Technologies() {

@@ -33,7 +33,7 @@ const TextWrapper = styled(motion.section)`
 `;
 
 export const HorizontalLine = styled(motion.div)`
-  width: clamp(20vw, 27vw, 35vw);
+  width: clamp(20vw, 22vw, 35vw);
 
   margin: 0 2rem;
   border-top: 1px solid ${(props) => props.theme.colors.greenTint};
