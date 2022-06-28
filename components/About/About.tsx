@@ -22,6 +22,11 @@ const AboutSection = styled(motion.div)`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
 `;
 
 const AboutText = styled(motion.p)`
@@ -31,6 +36,9 @@ const AboutText = styled(motion.p)`
   font-weight: 300;
   color: ${(props) => props.theme.colors.slate};
   margin: 0;
+  @media screen and (max-width: 768px) {
+    text-align: justify;
+  }
 `;
 const AboutImage = styled(motion.div)`
   background-color: ${(props) => props.theme.colors.lightNavy};
@@ -38,6 +46,10 @@ const AboutImage = styled(motion.div)`
   width: 22rem;
   height: 22rem;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: 15rem;
+    height: 15rem;
+  }
 `;
 
 export default function About() {

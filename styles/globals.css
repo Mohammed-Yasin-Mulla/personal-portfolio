@@ -22,7 +22,7 @@ p {
 @media screen and (max-width: 768px) {
   body {
     padding: 0 25px;
-    width: 100%;
+    width: 100vw;
   }
 }
 
@@ -33,4 +33,5 @@ a {
 
 * {
   box-sizing: border-box;
+  /* outline: limegreen solid 1px; */
 }
