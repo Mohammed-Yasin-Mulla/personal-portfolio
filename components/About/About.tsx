@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  max-width: 1080px;
   margin-top: 2rem;
   margin-bottom: 5rem;
 

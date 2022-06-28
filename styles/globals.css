@@ -11,6 +11,10 @@ p {
   line-height: 1.6;
 }
 
+div {
+  max-width: 1080px;
+}
+
 @media screen and (min-width: 768px) {
   body {
     display: flex;
