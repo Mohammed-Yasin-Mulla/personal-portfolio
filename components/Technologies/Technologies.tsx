@@ -9,7 +9,6 @@ import AntDLogo from "../../public/images/antd-logo.svg";
 import CssLogo from "../../public/images/css-logo.svg";
 import FramerLogo from "../../public/images/framer-logo.svg";
 import HtmlLogo from "../../public/images/html-logo.svg";
-import JavascriptLogo from "../../public/images/javascript-logo.svg";
 import NextLogo from "../../public/images/nextjs-logo.svg";
 import NodeLogo from "../../public/images/node-logo.svg";
 import ReactQueryLogo from "../../public/images/react-query-logo.svg";
@@ -22,7 +21,6 @@ const logos = [
   CssLogo,
   FramerLogo,
   HtmlLogo,
-  JavascriptLogo,
   NextLogo,
   NodeLogo,
   ReactQueryLogo,
@@ -120,20 +118,6 @@ export default function Technologies() {
     },
   };
 
-  const Text = styled(motion.p)`
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
-    font-family: ${(props) => props.theme.fonts.secondary};
-    font-weight: 500;
-    color: ${(props) => props.theme.colors.green};
-    margin: 0;
-    @media screen and (max-width: 768px) {
-      font-size: 1rem;
-      font-weight: 300;
-    }
-  `;
-
   return (
     <Wrapper>
       <TitleSection number="02" title="Technologies"></TitleSection>
@@ -162,15 +146,6 @@ export default function Technologies() {
           </LogoWrapper>
         ))}
       </LogoList>
-      <Text
-        variants={variants}
-        whileInView="visible"
-        initial="hidden"
-        custom={17}
-        viewport={{ once: true }}
-      >
-        and more ...
-      </Text>
     </Wrapper>
   );
 }
