@@ -33,12 +33,16 @@ const TextWrapper = styled(motion.section)`
 `;
 
 export const HorizontalLine = styled(motion.div)`
-  width: 35vw;
+  width: clamp(20vw, 27vw, 35vw);
+
   margin: 0 2rem;
   border-top: 1px solid ${(props) => props.theme.colors.greenTint};
   z-index: 1;
   display: inline-block;
   bottom: 25%;
+  @media screen and (max-width: 768px) {
+    margin: 0 0.5rem;
+  }
 `;
 
 export default function TitleSection(props: Props) {
