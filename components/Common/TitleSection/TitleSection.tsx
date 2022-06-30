@@ -26,7 +26,7 @@ const NumberWrapper = styled(motion.section)`
 
 const TextWrapper = styled(motion.section)`
   /* display: inline-block; */
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;
   color: ${(props) => props.theme.colors.white};
