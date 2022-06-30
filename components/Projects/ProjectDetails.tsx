@@ -52,6 +52,7 @@ const ProjectDescription = styled(motion.div)<StyledProps>`
   grid-row-start: 1;
   grid-row-end: 2;
   border-radius: 0.25rem;
+  pointer-events: none;
 `;
 
 const Title = styled(motion.h3)`
@@ -83,6 +84,7 @@ const Description = styled(motion.p)`
 const LinkWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+  pointer-events: all;
 `;
 
 export const Link = styled(motion.a)`
@@ -130,17 +132,91 @@ export const Link = styled(motion.a)`
 `;
 
 export function ProjectDetails({ title, description, index }: Props) {
+  const variants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.5,
+        delay: 0.1,
+      },
+    },
+    hidden: (i: number) => ({
+      opacity: 0,
+      x: i % 2 === 0 ? 60 : -60,
+    }),
+    visibleImage: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.5,
+        delay: 0.1,
+      },
+    },
+    hiddenImage: (i: number) => ({
+      opacity: 0,
+      x: i % 2 === 0 ? -60 : 60,
+    }),
+    whileHover: {
+      y: -5,
+    },
+    whileTap: {
+      y: 0,
+    },
+  };
+
   return (
     <ProjectWrapper>
-      <ProjectImage index={index} />
-      <ProjectDescription index={index}>
-        <Title>{title}</Title>
+      <ProjectImage
+        variants={variants}
+        whileInView="visibleImage"
+        initial="hiddenImage"
+        whileHover="whileHover"
+        viewport={{ once: true }}
+        index={index}
+        custom={1}
+      />
+      <ProjectDescription
+        variants={variants}
+        whileInView="visible"
+        viewport={{ once: true }}
+        initial="hidden"
+        index={index}
+        custom={index}
+      >
+        <Title
+          variants={variants}
+          whileInView="visibleImage"
+          initial="hiddenImage"
+          viewport={{ once: true }}
+          custom={index + 1}
+        >
+          {title}
+        </Title>
         <Description>{description}</Description>
         <LinkWrapper>
-          <Link>
+          <Link
+            variants={variants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            whileInView="visibleImage"
+            initial="hiddenImage"
+            viewport={{ once: true }}
+            custom={index + 1}
+          >
             <FiGithub />
           </Link>
-          <Link>
+          <Link
+            variants={variants}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            whileInView="visibleImage"
+            initial="hiddenImage"
+            viewport={{ once: true }}
+            custom={index + 1}
+          >
             <FiExternalLink />
           </Link>
         </LinkWrapper>
