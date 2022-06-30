@@ -12,7 +12,7 @@ const Home: NextPage = ({ isMobile = false }: { isMobile?: boolean }) => (
     <Hero isMobile={isMobile} />
     <About />
     <Technologies />
-    <Projects isMobile={isMobile}>Hello Projects</Projects>
+    <Projects />
     <Contact isMobile={isMobile}>Hello Contact</Contact>
   </>
 );
