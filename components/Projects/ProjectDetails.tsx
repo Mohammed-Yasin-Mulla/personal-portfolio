@@ -22,22 +22,21 @@ const ProjectWrapper = styled.div`
   margin: 2rem auto;
 `;
 
-const ProjectImage = styled(motion.div)<StyledProps>`
-  background-color: ${(props) => props.theme.colors.slate};
-  grid-column-start: ${(props) => (props.index % 2 === 0 ? 1 : 3)};
-  grid-column-end: ${(props) => (props.index % 2 === 0 ? 4 : 6)};
-  grid-row-start: 1;
-  grid-row-end: 2;
-  padding-top: 62.511%;
+const Description = styled(motion.p)`
+  display: flex;
+  align-items: center;
   border-radius: 0.25rem;
-`;
-
-const FlexStart = css`
-  align-items: flex-start;
-`;
-
-const FlexEnd = css`
-  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.lightNavy};
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-family: ${(props) => props.theme.fonts.primary};
+  font-weight: 300;
+  color: ${(props) => props.theme.colors.slate};
+  margin: 0;
+  margin-bottom: 1rem;
+  padding-top: 24.68%;
 `;
 
 const ProjectDescription = styled(motion.div)<StyledProps>`
@@ -55,6 +54,40 @@ const ProjectDescription = styled(motion.div)<StyledProps>`
   pointer-events: none;
 `;
 
+const ProjectImage = styled(motion.div)<StyledProps>`
+  background-color: ${(props) => props.theme.colors.slate};
+  grid-column-start: ${(props) => (props.index % 2 === 0 ? 1 : 3)};
+  grid-column-end: ${(props) => (props.index % 2 === 0 ? 4 : 6)};
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding-top: 62.511%;
+  border-radius: 0.25rem;
+
+  &:hover {
+    z-index: 1;
+  }
+
+  &:hover + ${ProjectDescription} {
+    transition: z-index 0.5s;
+    z-index: 0;
+    ${Description} {
+      border: 2px solid ${(props) => props.theme.colors.greenTint};
+      color: ${(props) => props.theme.colors.slateTint};
+      transition: background-color 1s, backdrop-filter 0.25s;
+      background-color: transparent;
+      backdrop-filter: blur(15px);
+    }
+  }
+`;
+
+const FlexStart = css`
+  align-items: flex-start;
+`;
+
+const FlexEnd = css`
+  align-items: flex-end;
+`;
+
 const Title = styled(motion.h3)`
   font-size: 1.5rem;
   font-family: ${(props) => props.theme.fonts.primary};
@@ -62,23 +95,6 @@ const Title = styled(motion.h3)`
   color: ${(props) => props.theme.colors.slate};
   margin: 0;
   margin-bottom: 1rem;
-`;
-
-const Description = styled(motion.p)`
-  display: flex;
-  align-items: center;
-  border-radius: 0.25rem;
-  justify-content: center;
-  width: 100%;
-  background-color: ${(props) => props.theme.colors.lightNavy};
-  border-radius: 0.8rem;
-  font-size: 1rem;
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: 300;
-  color: ${(props) => props.theme.colors.slate};
-  margin: 0;
-  margin-bottom: 1rem;
-  padding-top: 24.68%;
 `;
 
 const LinkWrapper = styled.div`
@@ -162,8 +178,15 @@ export function ProjectDetails({ title, description, index }: Props) {
     whileHover: {
       y: -5,
     },
+    whileHoverImage: {
+      scale: 1.1,
+      transition: { type: "spring", duration: 0.5 },
+    },
     whileTap: {
       y: 0,
+    },
+    whileTapImage: {
+      scale: 1.05,
     },
   };
 
@@ -173,7 +196,8 @@ export function ProjectDetails({ title, description, index }: Props) {
         variants={variants}
         whileInView="visibleImage"
         initial="hiddenImage"
-        whileHover="whileHover"
+        whileHover="whileHoverImage"
+        whileTap="whileTapImage"
         viewport={{ once: true }}
         index={index}
         custom={1}
