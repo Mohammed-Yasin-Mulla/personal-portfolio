@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled, { css } from "styled-components";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import pokemon from "../../public/images/ProjectImages/PokemonApp.jpeg";
+import { StaticImageData } from "next/image";
 
 interface Props {
   title: string;
@@ -11,6 +13,10 @@ interface Props {
 
 interface StyledProps {
   index: number;
+}
+interface StyledImageProps {
+  index: number;
+  img: StaticImageData;
 }
 
 const ProjectWrapper = styled.div`
@@ -54,14 +60,16 @@ const ProjectDescription = styled(motion.div)<StyledProps>`
   pointer-events: none;
 `;
 
-const ProjectImage = styled(motion.div)<StyledProps>`
-  background-color: ${(props) => props.theme.colors.slate};
+const ProjectImage = styled(motion.div)<StyledImageProps>`
   grid-column-start: ${(props) => (props.index % 2 === 0 ? 1 : 3)};
   grid-column-end: ${(props) => (props.index % 2 === 0 ? 4 : 6)};
   grid-row-start: 1;
   grid-row-end: 2;
   padding-top: 62.511%;
   border-radius: 0.25rem;
+  background: url(${(props) => props.img.src});
+  background-repeat: no-repeat;
+  background-size: contain;
 
   &:hover {
     z-index: 1;
@@ -201,6 +209,7 @@ export function ProjectDetails({ title, description, index }: Props) {
         viewport={{ once: true }}
         index={index}
         custom={1}
+        img={pokemon}
       />
       <ProjectDescription
         variants={variants}
