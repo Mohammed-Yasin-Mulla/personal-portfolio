@@ -43,12 +43,14 @@ export default function Footer() {
           whileInView="visible"
           initial="hidden"
           custom={1}
+          viewport={{ once: true }}
         >{`Build by `}</TextWrapper>
         <Link
           variants={variants}
           whileInView="visible"
           initial="hidden"
           custom={2}
+          viewport={{ once: true }}
         >
           Mohammed Yasin Mulla
         </Link>
@@ -59,12 +61,14 @@ export default function Footer() {
           whileInView="visible"
           initial="hidden"
           custom={3}
+          viewport={{ once: true }}
         >{`Inspired by `}</TextWrapper>
         <Link
           variants={variants}
           whileInView="visible"
           initial="hidden"
           custom={4}
+          viewport={{ once: true }}
         >
           Brittany Chiang
         </Link>

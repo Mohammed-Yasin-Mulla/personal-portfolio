@@ -57,18 +57,21 @@ export default function Contact() {
         whileInView="visible"
         initial="hidden"
         custom={1}
+        viewport={{ once: true }}
       >{`03. Contact Me`}</Title>
       <Heading
         variants={variants}
         whileInView="visible"
         initial="hidden"
         custom={2}
+        viewport={{ once: true }}
       >{`Let's get in touch`}</Heading>
       <Content
         variants={variants}
         whileInView="visible"
         initial="hidden"
         custom={3}
+        viewport={{ once: true }}
       >
         {` my inbox is always open. Whether you have a question or just want to say
         hi, I’ll try my best to get back to you!`}
@@ -78,6 +81,7 @@ export default function Contact() {
         whileInView="visible"
         initial="hidden"
         custom={4}
+        viewport={{ once: true }}
       >{`Say hello`}</Button>
     </Wrapper>
   );
