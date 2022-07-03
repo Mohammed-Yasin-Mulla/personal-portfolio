@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 // import Projects from "../components/Projects";
 import Technologies from "../components/Technologies";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 const Home: NextPage = ({ isMobile = false }: { isMobile?: boolean }) => (
   <>
@@ -14,7 +15,8 @@ const Home: NextPage = ({ isMobile = false }: { isMobile?: boolean }) => (
     <Technologies />
     {/* Disabling Projects for now! */}
     {/* <Projects /> */}
-    <Contact isMobile={isMobile}>Hello Contact</Contact>
+    <Contact />
+    <Footer />
   </>
 );
 

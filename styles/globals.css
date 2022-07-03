@@ -6,6 +6,7 @@ body {
   background-color: #0a192f;
   height: 100vh;
   padding: 0 100px;
+  width: 100vw;
 }
 p {
   line-height: 1.6;
@@ -19,6 +20,7 @@ div {
   body {
     display: flex;
     justify-content: center;
+    align-items: baseline;
     height: 100vh;
   }
 }
