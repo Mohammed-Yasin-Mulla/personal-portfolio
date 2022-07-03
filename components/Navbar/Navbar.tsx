@@ -4,6 +4,9 @@ import styled from "styled-components";
 import Button from "../Common/Button";
 import NavbarLink from "./NavbarLink";
 import NavbarFloating from "./NavbarFloating";
+import Logo from "../../public/images/logo.svg";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Props {
   isMobile?: boolean;
@@ -39,6 +42,11 @@ const LinkGroup = LinkName.map((name, index) => {
   return <NavbarLink key={index} label={name} index={index} />;
 });
 
+const SVGWrapper = styled(motion.div)`
+  height: 40;
+  width: 40;
+`;
+
 export default function Navbar_(props: Props) {
   const { isMobile = false } = props;
   if (!isMobile) {
@@ -46,7 +54,10 @@ export default function Navbar_(props: Props) {
       <>
         {/* Top NavBar */}
         <Navbar>
-          <span>Logo</span>
+          <SVGWrapper>
+            <Image src={Logo} alt="Logo" />
+          </SVGWrapper>
+
           <Wrapper>
             {LinkGroup}
             <Button
