@@ -10,6 +10,9 @@ const Wrapper = styled.div`
   align-items: center;
   margin: 2rem auto 13rem auto;
   max-width: 600px;
+  @media screen and (max-width: 768px) {
+    margin: 2rem auto 7rem auto;
+  }
 `;
 
 const Title = styled(motion.p)`
@@ -23,6 +26,14 @@ const Heading = styled(motion.p)`
   font-family: ${(props) => props.theme.fonts.primary};
   font-size: 3.75rem;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+    margin: 1rem auto;
+  }
 `;
 
 const Content = styled(motion.p)`

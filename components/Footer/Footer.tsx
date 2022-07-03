@@ -8,6 +8,9 @@ const Wrapper = styled(motion.div)`
   font-family: ${(props) => props.theme.fonts.secondary};
   margin: 2rem auto;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    margin: 7rem auto;
+  }
 `;
 
 const TextWrapper = styled(motion.div)`
