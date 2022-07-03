@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled, { css } from "styled-components";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
-import pokemon from "../../public/images/ProjectImages/PokemonApp.jpeg";
+
+// ----------------------------------Images--------------------------------------------
+// import pokemon from "../../public/images/ProjectImages/PokemonApp.png";
+import memeGenerator from "../../public/images/ProjectImages/memeGenerator.png";
+// ------------------------------------------------------------------------------
 import { StaticImageData } from "next/image";
 
 interface Props {
@@ -69,7 +73,7 @@ const ProjectImage = styled(motion.div)<StyledImageProps>`
   border-radius: 0.25rem;
   background: url(${(props) => props.img.src});
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 
   &:hover {
     z-index: 1;
@@ -209,7 +213,7 @@ export function ProjectDetails({ title, description, index }: Props) {
         viewport={{ once: true }}
         index={index}
         custom={1}
-        img={pokemon}
+        img={memeGenerator}
       />
       <ProjectDescription
         variants={variants}
