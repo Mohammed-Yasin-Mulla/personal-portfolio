@@ -15,20 +15,59 @@ const TextWrapper = styled(motion.div)`
   margin-bottom: 2rem;
 `;
 
-const Link = styled.a`
+const Link = styled(motion.a)`
   color: ${(props) => props.theme.colors.green};
 `;
 
 export default function Footer() {
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: "easeInOut",
+        delay: i * 0.2,
+      },
+    }),
+  };
+
   return (
     <Wrapper>
       <div>
-        <TextWrapper>{`Build by `}</TextWrapper>
-        <Link>Mohammed Yasin Mulla</Link>
+        <TextWrapper
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          custom={1}
+        >{`Build by `}</TextWrapper>
+        <Link
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          custom={2}
+        >
+          Mohammed Yasin Mulla
+        </Link>
       </div>
       <div>
-        <TextWrapper>{`Inspired by `}</TextWrapper>
-        <Link>Brittany Chiang</Link>
+        <TextWrapper
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          custom={3}
+        >{`Inspired by `}</TextWrapper>
+        <Link
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          custom={4}
+        >
+          Brittany Chiang
+        </Link>
       </div>
     </Wrapper>
   );
