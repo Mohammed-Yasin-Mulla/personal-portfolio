@@ -90,7 +90,7 @@ export default function About({ isMobile = false }: Props) {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="Hero">
       <Heading
         variants={variants}
         animate="visible"

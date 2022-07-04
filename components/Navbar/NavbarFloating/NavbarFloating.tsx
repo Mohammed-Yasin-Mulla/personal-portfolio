@@ -44,6 +44,15 @@ export default function NavbarFloating_() {
         animate={{ y: 0, opacity: 1 }}
         initial={{ y: 20, opacity: 0 }}
         transition={{ delay: 0.1 }}
+        href="#Hero"
+      >
+        Home
+      </motion.a>
+      <motion.a
+        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: 20, opacity: 0 }}
+        transition={{ delay: 0.1 }}
+        href="#About"
       >
         About
       </motion.a>
@@ -51,20 +60,23 @@ export default function NavbarFloating_() {
         animate={{ y: 0, opacity: 1 }}
         initial={{ y: 20, opacity: 0 }}
         transition={{ delay: 0.1 * 2 }}
+        href="#Technologies"
       >
         Technologies
       </motion.a>
-      <motion.a
+      {/* <motion.a
         animate={{ y: 0, opacity: 1 }}
         initial={{ y: 20, opacity: 0 }}
         transition={{ delay: 0.1 * 3 }}
+        href="/#Projects"
       >
         Project
-      </motion.a>
+      </motion.a> */}
       <motion.a
         animate={{ y: 0, opacity: 1 }}
         initial={{ y: 20, opacity: 0 }}
         transition={{ delay: 0.1 * 4 }}
+        href="#Contact"
       >
         Contact
       </motion.a>

@@ -44,7 +44,7 @@ const LinkGroup = LinkName.map((name, index) => {
   );
 });
 
-const SVGWrapper = styled(motion.div)`
+const SVGWrapper = styled(motion.a)`
   height: 40;
   width: 40;
 `;
@@ -60,11 +60,12 @@ export default function Navbar_(props: Props) {
     return (
       <>
         {/* Top NavBar */}
-        <Navbar>
+        <Navbar id="Navigation">
           <SVGWrapper
             variants={variants}
             whileInView="visible"
             initial="hidden"
+            href="#Hero"
           >
             <Image src={Logo} alt="Logo" />
           </SVGWrapper>
