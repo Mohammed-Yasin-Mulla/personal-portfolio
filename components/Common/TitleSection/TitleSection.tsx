@@ -46,8 +46,7 @@ export const HorizontalLine = styled(motion.div)`
 `;
 
 export default function TitleSection(props: Props) {
-  const { isMobile = false, number, title } = props;
-  console.log("💡 ~ TitleSection ~ isMobile", isMobile);
+  const { number, title } = props;
 
   const variant = {
     visible: (i: number) => ({

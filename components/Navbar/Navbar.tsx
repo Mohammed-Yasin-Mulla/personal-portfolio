@@ -49,12 +49,21 @@ const SVGWrapper = styled(motion.div)`
 
 export default function Navbar_(props: Props) {
   const { isMobile = false } = props;
+
+  const variants = {
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, x: -60 },
+  };
   if (!isMobile) {
     return (
       <>
         {/* Top NavBar */}
         <Navbar>
-          <SVGWrapper>
+          <SVGWrapper
+            variants={variants}
+            whileInView="visible"
+            initial="hidden"
+          >
             <Image src={Logo} alt="Logo" />
           </SVGWrapper>
 
