@@ -89,7 +89,7 @@ export default function About() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="About">
       <TitleSection number="01" title="About" />
       <AboutSection>
         <AboutText

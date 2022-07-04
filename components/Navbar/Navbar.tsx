@@ -37,9 +37,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const LinkName = ["About", "Technologies", "Projects", "Contact"];
+const LinkName = ["About", "Technologies", "Contact"];
 const LinkGroup = LinkName.map((name, index) => {
-  return <NavbarLink key={index} label={name} index={index} />;
+  return (
+    <NavbarLink key={index} label={name} index={index} link={`#${name}`} />
+  );
 });
 
 const SVGWrapper = styled(motion.div)`

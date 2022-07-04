@@ -62,7 +62,7 @@ export default function Contact() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="Contact">
       <Title
         variants={variants}
         whileInView="visible"

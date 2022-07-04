@@ -119,7 +119,7 @@ export default function Technologies() {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="Technologies">
       <TitleSection number="02" title="Technologies"></TitleSection>
       <AboutText
         variants={variants}

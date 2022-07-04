@@ -5,8 +5,7 @@ import styled from "styled-components";
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   index: number;
   label: string;
-  link?: string;
-  target?: string;
+  link: string;
   onClick?: () => void;
 }
 
@@ -58,7 +57,7 @@ const TextWrapper = styled.section`
 `;
 
 export default function NavbarLink(props: Props) {
-  const { index, label, link, target } = props;
+  const { index, label, link } = props;
 
   const formattedNumber = (index + 1).toLocaleString("en-US", {
     minimumIntegerDigits: 2,
@@ -72,7 +71,7 @@ export default function NavbarLink(props: Props) {
       transition={{ ease: "backIn", delay: 0.3 * index }}
       style={{ display: "flex", alignItems: "center" }}
     >
-      <Link href={link} target={target}>
+      <Link href={link}>
         <NumberWrapper>{formattedNumber}.</NumberWrapper>
         <TextWrapper>{label}</TextWrapper>
       </Link>
