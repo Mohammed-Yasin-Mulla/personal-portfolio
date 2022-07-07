@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import { BRITTANYCHING_LINK } from "../../Constants";
 
 const Wrapper = styled(motion.div)`
   color: ${(props) => props.theme.colors.slate};
@@ -54,11 +55,12 @@ export default function Footer() {
           initial="hidden"
           custom={2}
           viewport={{ once: true }}
+          href="#Hero"
         >
           Mohammed Yasin Mulla
         </Link>
       </div>
-      <div>
+      <div style={{ marginTop: "0.5rem" }}>
         <TextWrapper
           variants={variants}
           whileInView="visible"
@@ -72,6 +74,9 @@ export default function Footer() {
           initial="hidden"
           custom={4}
           viewport={{ once: true }}
+          href={BRITTANYCHING_LINK}
+          target="_blank"
+          rel="noreferrer"
         >
           Brittany Chiang
         </Link>

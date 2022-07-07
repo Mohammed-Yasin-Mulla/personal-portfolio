@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import { TWITTER_LINK } from "../../Constants";
 import Button from "../Common/Button";
 
 const Wrapper = styled.div`
@@ -87,13 +88,15 @@ export default function Contact() {
         {` my inbox is always open. Whether you have a question or just want to say
         hi, I’ll try my best to get back to you!`}
       </Content>
-      <Button
-        variants={variants}
-        whileInView="visible"
-        initial="hidden"
-        custom={4}
-        viewport={{ once: true }}
-      >{`Say hello`}</Button>
+      <a href={TWITTER_LINK} target="_blank" rel="noreferrer">
+        <Button
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          custom={4}
+          viewport={{ once: true }}
+        >{`Say hello`}</Button>
+      </a>
     </Wrapper>
   );
 }

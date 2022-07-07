@@ -1,4 +1,10 @@
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import {
+  EMAIL_LINK,
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+  TWITTER_LINK,
+} from "../../../Constants";
 import { Wrapper, Link, VerticalLine } from "./NavbarSideStyleComp";
 
 interface Props {
@@ -47,6 +53,9 @@ export default function NavbarSide(props: Props) {
           whileHover="whileHover"
           whileTap="whileTap"
           custom={{ i: 1 }}
+          href={GITHUB_LINK}
+          target="_blank"
+          rel="noreferrer"
         >
           <FiGithub className="svgIcon" />
         </Link>
@@ -57,6 +66,9 @@ export default function NavbarSide(props: Props) {
           whileHover="whileHover"
           whileTap="whileTap"
           custom={{ i: 2 }}
+          href={LINKEDIN_LINK}
+          target="_blank"
+          rel="noreferrer"
         >
           <FiLinkedin className="svgIcon" />
         </Link>
@@ -67,6 +79,9 @@ export default function NavbarSide(props: Props) {
           whileHover="whileHover"
           whileTap="whileTap"
           custom={{ i: 3 }}
+          href={TWITTER_LINK}
+          target="_blank"
+          rel="noreferrer"
         >
           <FiTwitter className="svgIcon" />
         </Link>
@@ -89,6 +104,7 @@ export default function NavbarSide(props: Props) {
           whileHover="whileHover"
           whileTap="whileTap"
           custom={{ side: "right" }}
+          href={EMAIL_LINK}
         >
           <p className="email">MohammedYasinMulla@outlook.com</p>
         </Link>

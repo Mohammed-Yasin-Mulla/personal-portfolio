@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled, { css } from "styled-components";
+import { FLURN_LINK, GITHUB_LINK } from "../../Constants";
 import Button from "../Common/Button";
 
 interface Props {
@@ -20,8 +21,8 @@ const Wrapper = styled.div`
   min-height: 100vh;
   @media screen and (max-width: 768px) {
     justify-content: flex-start;
-    margin-top: 2rem;
-    height: 120vh;
+    margin-top: 1rem;
+    height: 100vh;
   }
 `;
 
@@ -109,7 +110,7 @@ export default function About({ isMobile = false }: Props) {
         initial="hidden"
         custom={3}
       >
-        I build things for the web.
+        I build things for the web & mobile.
       </Text>
       <Paragraph
         variants={variants}
@@ -121,26 +122,38 @@ export default function About({ isMobile = false }: Props) {
         Currently focused on building the UI of the mobile web and the admin
         panel at`}
       </Paragraph>
-      <Link variants={variants} animate="visible" initial="hidden" custom={5}>
-        Flurn
-      </Link>
-      <motion.section
+      <Link
+        href={FLURN_LINK}
+        target="_blank"
+        rel="noreferrer"
         variants={variants}
         animate="visible"
         initial="hidden"
-        custom={6}
+        custom={5}
       >
-        <Button my={1}>Check out my Github</Button>
-      </motion.section>
-      {isMobile && (
-        <motion.section
+        Flurn
+      </Link>
+      <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
+        <motion.div
           variants={variants}
           animate="visible"
           initial="hidden"
-          custom={7}
+          custom={6}
         >
-          <Button>Resume</Button>
-        </motion.section>
+          <Button my={1}>Check out my Github</Button>
+        </motion.div>
+      </a>
+      {isMobile && (
+        <a href="">
+          <motion.div
+            variants={variants}
+            animate="visible"
+            initial="hidden"
+            custom={7}
+          >
+            <Button>Resume</Button>
+          </motion.div>
+        </a>
       )}
       {isMobile}
     </Wrapper>
