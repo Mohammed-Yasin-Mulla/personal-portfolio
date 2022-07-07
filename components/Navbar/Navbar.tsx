@@ -1,5 +1,5 @@
 import NavbarSide from "./NavbarSide/NavbarSide";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../Common/Button";
 import NavbarLink from "./NavbarLink";
@@ -12,11 +12,15 @@ interface Props {
   isMobile?: boolean;
 }
 
-const Navbar = styled.nav`
+interface NavbarProps {
+  visible: boolean;
+}
+
+const Navbar = styled.nav<NavbarProps>`
   display: flex;
   z-index: 2;
   position: fixed;
-  top: 0;
+  top: ${(props) => (props.visible ? "0" : "-90px")};
   left: 0;
   width: 100vw;
   padding: 1rem 2rem;
@@ -28,6 +32,7 @@ const Navbar = styled.nav`
   font-weight: 500;
   border-bottom: 1px solid ${(props) => props.theme.colors.greenTint};
   backdrop-filter: blur(15px);
+  transition: 0.3s ease-in-out;
 `;
 
 const Wrapper = styled.div`
@@ -51,6 +56,23 @@ const SVGWrapper = styled(motion.a)`
 
 export default function Navbar_(props: Props) {
   const { isMobile = false } = props;
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // find current scroll position
+      const currentScrollPos = window.pageYOffset;
+
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+      // set state to new scroll position
+      setPrevScrollPos(currentScrollPos);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible]);
 
   const variants = {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -60,12 +82,13 @@ export default function Navbar_(props: Props) {
     return (
       <>
         {/* Top NavBar */}
-        <Navbar id="Navigation">
+        <Navbar id="Navigation" visible={visible}>
           <SVGWrapper
             variants={variants}
             whileInView="visible"
             initial="hidden"
             href="#Hero"
+            viewport={{ once: true }}
           >
             <Image src={Logo} alt="Logo" />
           </SVGWrapper>
