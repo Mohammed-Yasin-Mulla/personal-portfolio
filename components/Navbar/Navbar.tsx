@@ -7,7 +7,6 @@ import NavbarFloating from "./NavbarFloating";
 import Logo from "../../public/images/logo.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 interface Props {
   isMobile?: boolean;
 }
@@ -95,12 +94,18 @@ export default function Navbar_(props: Props) {
 
           <Wrapper>
             {LinkGroup}
-            <Button
-              animate={{ x: [120, 0], opacity: 1 }}
-              initial={{ opacity: 0 }}
+            <a
+              href="/Mohammed_Yasin_Mulla_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Resume
-            </Button>
+              <Button
+                animate={{ x: [120, 0], opacity: 1 }}
+                initial={{ opacity: 0 }}
+              >
+                Resume
+              </Button>
+            </a>
           </Wrapper>
         </Navbar>
 
