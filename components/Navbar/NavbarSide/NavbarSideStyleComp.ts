@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import React from "react";
 import styled, { css } from "styled-components";
 
-interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
+interface WrapperProps {
   isMobile?: boolean;
-  positionleftcol?: boolean;
-  positionrightcol?: boolean;
+  positionLeftCol?: boolean;
+  positionRightCol?: boolean;
 }
-const positionleftcol = css`
+const positionLeftCol = css`
   position: fixed;
   justify-content: center;
   flex-direction: column;
@@ -15,7 +14,7 @@ const positionleftcol = css`
   bottom: 0;
   z-index: 1;
 `;
-const positionrightcol = css`
+const positionRightCol = css`
   position: fixed;
   flex-direction: column;
   right: 0;
@@ -29,8 +28,8 @@ export const Wrapper = styled(motion.div)<WrapperProps>`
   flex-direction: column;
   gap: 1rem;
   margin: 0 2rem;
-  ${(props) => props.positionleftcol && positionleftcol}
-  ${(props) => props.positionrightcol && positionrightcol}
+  ${(props) => props.positionLeftCol && positionLeftCol}
+  ${(props) => props.positionRightCol && positionRightCol}
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -63,11 +62,9 @@ export const Link = styled(motion.a)`
     &:hover {
       svg {
         stroke: ${(props) => props.theme.colors.green};
-        /* transform: translateY(-5px); */
       }
       p {
         color: ${(props) => props.theme.colors.green};
-        /* transform: translateY(-5px); */
       }
     }
     &:active {
