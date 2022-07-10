@@ -7,9 +7,7 @@ export default {
 } as ComponentMeta<typeof Contact>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Contact> = (args) => (
-  <Contact {...args} />
-);
+const Template: ComponentStory<typeof Contact> = () => <Contact />;
 
 export const Default = Template.bind({});
 Default.args = {

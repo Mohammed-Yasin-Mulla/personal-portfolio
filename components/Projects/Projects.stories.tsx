@@ -7,9 +7,7 @@ export default {
 } as ComponentMeta<typeof Projects>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Projects> = (args) => (
-  <Projects {...args} />
-);
+const Template: ComponentStory<typeof Projects> = () => <Projects />;
 
 export const Default = Template.bind({});
 Default.args = {
