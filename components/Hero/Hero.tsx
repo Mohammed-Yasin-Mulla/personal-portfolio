@@ -144,7 +144,11 @@ export default function About({ isMobile = false }: Props) {
         </motion.div>
       </a>
       {isMobile && (
-        <a href="">
+        <a
+          href="/Mohammed_Yasin_Mulla_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <motion.div
             variants={variants}
             animate="visible"
