@@ -7,9 +7,6 @@ import NavbarFloating from "./NavbarFloating";
 import Logo from "../../public/images/logo.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
-interface Props {
-  isMobile?: boolean;
-}
 
 interface NavbarProps {
   visible: boolean;
@@ -32,6 +29,10 @@ const Navbar = styled.nav<NavbarProps>`
   border-bottom: 1px solid ${(props) => props.theme.colors.greenTint};
   backdrop-filter: blur(15px);
   transition: 0.3s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -53,8 +54,7 @@ const SVGWrapper = styled(motion.a)`
   width: 40;
 `;
 
-export default function Navbar_(props: Props) {
-  const { isMobile = false } = props;
+export default function Navbar_() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -77,53 +77,45 @@ export default function Navbar_(props: Props) {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
     hidden: { opacity: 0, x: -60 },
   };
-  if (!isMobile) {
-    return (
-      <>
-        {/* Top NavBar */}
-        <Navbar id="Navigation" visible={visible}>
-          <SVGWrapper
-            variants={variants}
-            whileInView="visible"
-            initial="hidden"
-            href="#Hero"
-            viewport={{ once: true }}
+  return (
+    <>
+      {/* Top NavBar */}
+      <Navbar id="Navigation" visible={visible}>
+        <SVGWrapper
+          variants={variants}
+          whileInView="visible"
+          initial="hidden"
+          href="#Hero"
+          viewport={{ once: true }}
+        >
+          <Image src={Logo} alt="Logo" />
+        </SVGWrapper>
+
+        <Wrapper>
+          {LinkGroup}
+          <a
+            href="/Mohammed_Yasin_Mulla_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Image src={Logo} alt="Logo" />
-          </SVGWrapper>
-
-          <Wrapper>
-            {LinkGroup}
-            <a
-              href="/Mohammed_Yasin_Mulla_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              animate={{ x: [120, 0], opacity: 1 }}
+              initial={{ opacity: 0 }}
             >
-              <Button
-                animate={{ x: [120, 0], opacity: 1 }}
-                initial={{ opacity: 0 }}
-              >
-                Resume
-              </Button>
-            </a>
-          </Wrapper>
-        </Navbar>
+              Resume
+            </Button>
+          </a>
+        </Wrapper>
+      </Navbar>
 
-        {/* Left Icons */}
-        <NavbarSide positionCol="right" />
+      {/* Left Icons */}
+      <NavbarSide positionCol="right" />
 
-        {/* Right Email */}
-        <NavbarSide positionCol="left" />
-      </>
-    );
-  }
-  if (isMobile) {
-    return (
-      <>
-        <NavbarFloating />
-      </>
-    );
-  }
+      {/* Right Email */}
+      <NavbarSide positionCol="left" />
 
-  return null;
+      {/* Floating Navbar for mobile view */}
+      <NavbarFloating />
+    </>
+  );
 }

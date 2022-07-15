@@ -4,10 +4,6 @@ import styled, { css } from "styled-components";
 import { FLURN_LINK, GITHUB_LINK } from "../../Constants";
 import Button from "../Common/Button";
 
-interface Props {
-  isMobile?: boolean;
-}
-
 interface TextProps {
   secondary?: boolean;
 }
@@ -19,10 +15,18 @@ const Wrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
+
+  .mobile-resume-link {
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
     justify-content: flex-start;
     margin-top: 1rem;
     height: 100vh;
+    .mobile-resume-link {
+      display: block;
+    }
   }
 `;
 
@@ -74,7 +78,7 @@ const Link = styled(motion.a)`
   cursor: pointer;
 `;
 
-export default function About({ isMobile = false }: Props) {
+export default function About() {
   const variants = {
     hidden: {
       opacity: 0,
@@ -143,19 +147,23 @@ export default function About({ isMobile = false }: Props) {
           <Button my={1}>Check out my Github</Button>
         </motion.div>
       </a>
-      {isMobile && (
-        <a href="">
-          <motion.div
-            variants={variants}
-            animate="visible"
-            initial="hidden"
-            custom={7}
-          >
-            <Button>Resume</Button>
-          </motion.div>
-        </a>
-      )}
-      {isMobile}
+
+      <a
+        // appears on mobile screens
+        href="/Mohammed_Yasin_Mulla_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mobile-resume-link"
+      >
+        <motion.div
+          variants={variants}
+          animate="visible"
+          initial="hidden"
+          custom={7}
+        >
+          <Button>Resume</Button>
+        </motion.div>
+      </a>
     </Wrapper>
   );
 }
