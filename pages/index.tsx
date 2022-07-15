@@ -7,32 +7,15 @@ import Technologies from "../components/Technologies";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   <Head>
     <title>Mohammed Yasin Mulla</title>
   </Head>;
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    });
-
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
-  }, []);
-
   return (
     <>
-      <Navbar isMobile={isMobile} />
+      <Navbar />
       <Hero />
       <About />
       <Technologies />
