@@ -23,6 +23,11 @@ const NavbarFloating = styled(motion.nav)`
   justify-content: space-between;
   gap: 0.25rem;
   align-items: center;
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
 
   a {
     background: transparent;

@@ -32,6 +32,10 @@ const Navbar = styled.nav<NavbarProps>`
   border-bottom: 1px solid ${(props) => props.theme.colors.greenTint};
   backdrop-filter: blur(15px);
   transition: 0.3s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`

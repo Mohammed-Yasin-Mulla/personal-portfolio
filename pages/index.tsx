@@ -33,7 +33,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar isMobile={isMobile} />
-      <Hero isMobile={isMobile} />
+      <Hero />
       <About />
       <Technologies />
       {/* Disabling Projects for now! */}
