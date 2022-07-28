@@ -122,8 +122,8 @@ export default function About() {
         initial="hidden"
         custom={4}
       >
-        {` I'am a software engineer specializing in digital experience. I am
-        Currently focused on building the UI of the mobile web and the admin
+        {` I am a software engineer specializing in digital experience. I am
+        currently focused on building the UI of the mobile web and the admin
         panel at`}
       </Paragraph>
       <Link

@@ -102,7 +102,7 @@ export default function About() {
           system that introduced me to the world of flash games like Miniclip. 4
           years and a burned up power supply later, I knew computers and
           electronics is where my interests lay. As a mechanical engineering
-          student with varied interests, I spent a lot of time learning a lot
+          student with varied interests, having a wide range of interests, I spent a my time learning
           more about coding and design and taught myself both React.js and
           Fusion360. Today, I’m a well equipped front end developer who is
           constantly evolving towards being a full stack developer.`}
