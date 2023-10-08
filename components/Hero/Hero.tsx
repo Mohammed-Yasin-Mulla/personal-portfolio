@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled, { css } from "styled-components";
-import { FLURN_LINK, GITHUB_LINK } from "../../Constants";
+import { OBMONDO_LINK, GITHUB_LINK } from "../../Constants";
 import Button from "../Common/Button";
 
 interface TextProps {
@@ -127,7 +127,7 @@ export default function About() {
         panel at`}
       </Paragraph>
       <Link
-        href={FLURN_LINK}
+        href={OBMONDO_LINK}
         target="_blank"
         rel="noreferrer"
         variants={variants}
@@ -135,7 +135,7 @@ export default function About() {
         initial="hidden"
         custom={5}
       >
-        Flurn
+        Obmondo
       </Link>
       <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
         <motion.div
