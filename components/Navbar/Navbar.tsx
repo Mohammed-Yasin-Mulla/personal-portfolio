@@ -94,7 +94,7 @@ export default function Navbar_() {
         <Wrapper>
           {LinkGroup}
           <a
-            href="/Mohammed_Yasin_Mulla_Resume.pdf"
+            href="/Mohammed-Yasin-Mulla-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
