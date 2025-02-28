@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled, { css } from "styled-components";
-import { OBMONDO_LINK, GITHUB_LINK } from "../../Constants";
+import { GITHUB_LINK } from "../../Constants";
 import Button from "../Common/Button";
 
 interface TextProps {
@@ -68,15 +68,15 @@ const Paragraph = styled(motion.p)`
   margin: 0;
 `;
 
-const Link = styled(motion.a)`
-  font-size: 1rem;
-  font-family: ${(props) => props.theme.fonts.primary};
-  font-weight: 300;
-  color: ${(props) => props.theme.colors.green};
-  margin: 0 0 1rem 0;
-  text-decoration: none;
-  cursor: pointer;
-`;
+// const Link = styled(motion.a)`
+//   font-size: 1rem;
+//   font-family: ${(props) => props.theme.fonts.primary};
+//   font-weight: 300;
+//   color: ${(props) => props.theme.colors.green};
+//   margin: 0 0 1rem 0;
+//   text-decoration: none;
+//   cursor: pointer;
+// `;
 
 export default function About() {
   const variants = {
@@ -123,10 +123,9 @@ export default function About() {
         custom={4}
       >
         {` I am a software engineer specializing in digital experience. I am
-        currently focused on building the UI of the mobile web and the admin
-        panel at`}
+        currently focused on building the UI of the mobile web`}
       </Paragraph>
-      <Link
+      {/* <Link
         href={OBMONDO_LINK}
         target="_blank"
         rel="noreferrer"
@@ -136,7 +135,7 @@ export default function About() {
         custom={5}
       >
         Obmondo
-      </Link>
+      </Link> */}
       <a href={GITHUB_LINK} target="_blank" rel="noreferrer">
         <motion.div
           variants={variants}
