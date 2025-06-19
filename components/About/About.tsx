@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 import styled from "styled-components";
 import TitleSection from "../Common/TitleSection";
-import ProfilePic from "../../public/images/profile-pic.png";
 
 const Wrapper = styled.div`
   display: flex;
@@ -116,7 +114,15 @@ export default function About() {
           whileTap={"onHoverOut"}
           viewport={{ once: true }}
         >
-          <Image src={ProfilePic} alt="My profile-pic" layout="responsive" />
+          <img
+            src="https://avatars.githubusercontent.com/mohammed-yasin-mulla?s=400"
+            alt="My profile-pic"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
         </AboutImage>
       </AboutSection>
     </Wrapper>

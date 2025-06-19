@@ -47,7 +47,9 @@ const Secondary = css`
   color: ${(props) => props.theme.colors.slate};
 `;
 
-const Text = styled(motion.h2)<TextProps>`
+const Text = styled(motion.h2).withConfig({
+  shouldForwardProp: (prop) => !["secondary"].includes(prop as string),
+})<TextProps>`
   font-size: 4.585rem;
   font-family: ${(props) => props.theme.fonts.primary};
   font-weight: 500;

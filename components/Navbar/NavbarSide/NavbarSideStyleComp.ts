@@ -21,7 +21,10 @@ const positionRightCol = css`
   bottom: 0;
   z-index: 1;
 `;
-export const Wrapper = styled(motion.div)<WrapperProps>`
+export const Wrapper = styled(motion.div).withConfig({
+  shouldForwardProp: (prop) =>
+    !["positionLeftCol", "positionRightCol"].includes(prop),
+})<WrapperProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
