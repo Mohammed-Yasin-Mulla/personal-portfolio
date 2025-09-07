@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { TWITTER_LINK } from "../../Constants";
 import Button from "../Common/Button";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ id?: string; children?: React.ReactNode }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -1,35 +1,23 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import TitleSection from "../Common/TitleSection";
 // -------------------------LOGO-----------------------------------
-import ReactLogo from "../../public/images/react-logo.svg";
-import AntDLogo from "../../public/images/antd-logo.svg";
-import CssLogo from "../../public/images/css-logo.svg";
-import FramerLogo from "../../public/images/framer-logo.svg";
-import HtmlLogo from "../../public/images/html-logo.svg";
-import NextLogo from "../../public/images/nextjs-logo.svg";
-import NodeLogo from "../../public/images/node-logo.svg";
-import ReactQueryLogo from "../../public/images/react-query-logo.svg";
-import StyledCompLogo from "../../public/images/styled-comp.svg";
-import TypeScriptLogo from "../../public/images/typescript-logo.svg";
-
 const logos = [
-  ReactLogo,
-  AntDLogo,
-  CssLogo,
-  FramerLogo,
-  HtmlLogo,
-  NextLogo,
-  NodeLogo,
-  ReactQueryLogo,
-  StyledCompLogo,
-  TypeScriptLogo,
+  { src: "/images/react-logo.svg", name: "React" },
+  { src: "/images/antd-logo.svg", name: "Ant Design" },
+  { src: "/images/css-logo.svg", name: "CSS" },
+  { src: "/images/framer-logo.svg", name: "Framer Motion" },
+  { src: "/images/html-logo.svg", name: "HTML" },
+  { src: "/images/nextjs-logo.svg", name: "Next.js" },
+  { src: "/images/node-logo.svg", name: "Node.js" },
+  { src: "/images/react-query-logo.svg", name: "React Query" },
+  { src: "/images/styled-comp.svg", name: "Styled Components" },
+  { src: "/images/typescript-logo.svg", name: "TypeScript" },
 ];
 // ------------------------------------------------------------
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ id?: string; children?: React.ReactNode }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -142,7 +130,7 @@ export default function Technologies() {
             viewport={{ once: true }}
             key={index}
           >
-            <Image src={logo} width={120} alt={`${logo}`} height={120} />
+            <img src={logo.src} alt={logo.name} width={120} height={120} />
           </LogoWrapper>
         ))}
       </LogoList>

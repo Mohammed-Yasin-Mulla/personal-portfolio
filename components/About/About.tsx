@@ -1,8 +1,9 @@
+import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import TitleSection from "../Common/TitleSection";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ id?: string; children?: React.ReactNode }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,6 +44,7 @@ const AboutImage = styled(motion.div)`
   width: 22rem;
   height: 22rem;
   overflow: hidden;
+  position: relative;
   @media screen and (max-width: 768px) {
     width: 15rem;
     height: 15rem;

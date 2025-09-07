@@ -8,7 +8,7 @@ interface TextProps {
   secondary?: boolean;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ id?: string; children?: React.ReactNode }>`
   /* background-color: ${(props) => props.theme.colors.greenTint}; */
   display: flex;
   flex-direction: column;

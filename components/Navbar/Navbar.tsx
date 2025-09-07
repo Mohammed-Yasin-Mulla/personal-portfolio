@@ -4,12 +4,12 @@ import styled from "styled-components";
 import Button from "../Common/Button";
 import NavbarLink from "./NavbarLink";
 import NavbarFloating from "./NavbarFloating";
-import Logo from "../../public/images/logo.svg";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface NavbarProps {
   visible: boolean;
+  id?: string;
+  children?: React.ReactNode;
 }
 
 const Navbar = styled.nav<NavbarProps>`
@@ -88,7 +88,11 @@ export default function Navbar_() {
           href="#Hero"
           viewport={{ once: true }}
         >
-          <Image src={Logo} alt="Logo" />
+          <img
+            src="/images/logo.svg"
+            alt="Logo"
+            style={{ width: "32px", height: "32px" }}
+          />
         </SVGWrapper>
 
         <Wrapper>

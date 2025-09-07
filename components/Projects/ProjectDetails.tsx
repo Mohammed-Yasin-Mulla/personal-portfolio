@@ -5,9 +5,8 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 // ----------------------------------Images--------------------------------------------
 // import pokemon from "../../public/images/ProjectImages/PokemonApp.png";
-import memeGenerator from "../../public/images/ProjectImages/memeGenerator.png";
+import memeGeneratorImg from "../../public/images/ProjectImages/memeGenerator.png";
 // ------------------------------------------------------------------------------
-import { StaticImageData } from "next/image";
 
 interface Props {
   title: string;
@@ -20,7 +19,7 @@ interface StyledProps {
 }
 interface StyledImageProps {
   index: number;
-  img: StaticImageData;
+  img: string;
 }
 
 const ProjectWrapper = styled.div`
@@ -71,7 +70,7 @@ const ProjectImage = styled(motion.div)<StyledImageProps>`
   grid-row-end: 2;
   padding-top: 62.511%;
   border-radius: 0.25rem;
-  background: url(${(props) => props.img.src});
+  background: url(${(props) => props.img});
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -213,7 +212,11 @@ export function ProjectDetails({ title, description, index }: Props) {
         viewport={{ once: true }}
         index={index}
         custom={1}
-        img={memeGenerator}
+        img={
+          typeof memeGeneratorImg === "string"
+            ? memeGeneratorImg
+            : (memeGeneratorImg as any).src
+        }
       />
       <ProjectDescription
         variants={variants}

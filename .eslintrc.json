@@ -5,6 +5,7 @@
     "prettier/prettier": "error",
     "no-unused-vars":"error",
     "no-console":"warn",
-    "no-unused-expressions":"error"
+    "no-unused-expressions":"error",
+    "@next/next/no-img-element": "off"
   }
 }

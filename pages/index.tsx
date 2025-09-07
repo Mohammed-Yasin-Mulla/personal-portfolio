@@ -9,12 +9,17 @@ import Footer from "../components/Footer";
 import Head from "next/head";
 
 const Home: NextPage = () => {
-  <Head>
-    <title>Mohammed Yasin Mulla</title>
-  </Head>;
-
   return (
     <>
+      <Head>
+        <title>Mohammed Yasin Mulla</title>
+        <meta
+          name="description"
+          content="Portfolio of Mohammed Yasin Mulla - Software Engineer specializing in frontend development with React, Next.js and modern web technologies"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       <Hero />
       <About />

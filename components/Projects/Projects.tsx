@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import TitleSection from "../Common/TitleSection";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ children?: React.ReactNode }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

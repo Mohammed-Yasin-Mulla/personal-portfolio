@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
-    "pre-commit": "npm run lint"
+    "pre-commit": "pnpm run lint"
   },
   "dependencies": {
     "framer-motion": "^6.3.11",
