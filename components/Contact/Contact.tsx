@@ -95,7 +95,7 @@ export default function Contact() {
           initial="hidden"
           custom={4}
           viewport={{ once: true }}
-        >{`Say hello`}</Button>
+        >{`Hire me`}</Button>
       </a>
     </Wrapper>
   );

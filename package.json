@@ -48,6 +48,7 @@
     "eslint-plugin-storybook": "^0.5.12",
     "husky": "^8.0.1",
     "prettier": "2.3.0",
+    "shadcn": "^3.2.1",
     "typescript": "4.7.4"
   }
 }

@@ -4,6 +4,7 @@ import Contact from "../components/Contact";
 import Navbar from "../components/Navbar/Navbar";
 // import Projects from "../components/Projects";
 import Technologies from "../components/Technologies";
+import Experience from "../components/Experience";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import Head from "next/head";
@@ -128,6 +129,7 @@ const Home: NextPage = () => {
       <Hero />
       <About />
       <Technologies />
+      <Experience />
       {/* Disabling Projects for now! */}
       {/* <Projects /> */}
       <Contact />

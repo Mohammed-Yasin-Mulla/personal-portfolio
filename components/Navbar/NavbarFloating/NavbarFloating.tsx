@@ -15,7 +15,7 @@ const NavbarFloating = styled(motion.nav)`
   font-size: 0.712rem;
   font-family: ${(props) => props.theme.fonts.secondary};
   padding: 0.7rem 1.5rem;
-  z-index: 1;
+  z-index: 100;
   position: fixed;
   left: 50%;
   bottom: 2rem;
